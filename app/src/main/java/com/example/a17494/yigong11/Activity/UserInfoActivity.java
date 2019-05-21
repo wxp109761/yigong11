@@ -75,7 +75,6 @@ public class UserInfoActivity extends Activity {
             @Override
             public void onNext(UserInfoBean userInfoBean) {
                 entity=userInfoBean.getData().get(0);
-                Log.d("DDX", "Code "+userInfoBean.getCode()+" MSG "+userInfoBean.getMsg());
                 userId.setText(SpUtils.getString(getApplicationContext(),Constants.STU_ID));
                 userName.setText(entity.getName());
                 sex.setText(entity.getSex());
@@ -84,7 +83,6 @@ public class UserInfoActivity extends Activity {
                 major.setText(entity.getMajor());
                 regDate.setText(entity.getDate());
                 inYear.setText(entity.getInYear()+"");
-
                 tobarUtil.setOnSettingClickListenter(new TobarUtil.OnbtnSettingClickListenter() {
                     @Override
                     public void OnSettingClick() {

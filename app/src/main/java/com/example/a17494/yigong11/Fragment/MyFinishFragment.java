@@ -62,14 +62,11 @@ public class MyFinishFragment extends Fragment implements AdapterView.OnItemClic
         RetrofitClient.getInstance(view.getContext()).getAttendWork(new Subscriber<List<MyWorkBean>>() {
             @Override
             public void onCompleted() {
-
             }
 
             @Override
             public void onError(Throwable e) {
-
             }
-
             @Override
             public void onNext(List<MyWorkBean> workBeans) {
                 Log.d("XXCC",workBeans.get(0).isIsfinished()+"");

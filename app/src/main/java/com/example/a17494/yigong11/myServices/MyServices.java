@@ -43,7 +43,7 @@ public interface MyServices {
     //取消义工活动
     @FormUrlEncoded
     @POST("student/deleteattendwork")
-    Observable<OrderOrCancelBean> cancelSignUp(@Field("studentid") String user_id, @Field("workid") String work_id);
+    Observable<OrderOrCancelBean> cancelSignUp(@Field("workid") String work_id);
    //修改义工信息
 
     @FormUrlEncoded
@@ -61,5 +61,5 @@ public interface MyServices {
     //预约义工活动
     @FormUrlEncoded
     @POST("student/orderwork")
-    Observable<OrderOrCancelBean> orderWork(@Field("workid") String work_id,@Field("studentid") String user_id);
+    Observable<OrderOrCancelBean> orderWork(@Field("workid") String work_id);
 }

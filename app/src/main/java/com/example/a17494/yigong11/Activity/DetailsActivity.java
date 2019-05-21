@@ -256,7 +256,7 @@ public class DetailsActivity extends Activity {
 
                         }
                     }
-                },entity.getId() + "",SpUtils.getString(getApplicationContext(),Constants.STU_ID) );
+                },entity.getId() + "");
             }
         });
     }
@@ -299,7 +299,7 @@ public class DetailsActivity extends Activity {
                            }
                        });
                    }
-               },SpUtils.getString(getApplicationContext(),Constants.STU_ID) , entity.getId() + "");
+               }, entity.getId() + "");
            }
        });
     }

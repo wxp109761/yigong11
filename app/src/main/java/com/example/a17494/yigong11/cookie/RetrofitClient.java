@@ -129,8 +129,8 @@ public class RetrofitClient {
     }
 
 
-    public void cancelSignUp(Subscriber<OrderOrCancelBean> subscriber, String user_id,String work_no) {
-        apiService.cancelSignUp(user_id,work_no)
+    public void cancelSignUp(Subscriber<OrderOrCancelBean> subscriber,String work_no) {
+        apiService.cancelSignUp(work_no)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -157,8 +157,8 @@ public class RetrofitClient {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
     }
-    public void orderWork(Subscriber<OrderOrCancelBean> subscriber, String work_id, String student_id) {
-        apiService.orderWork(work_id,student_id)
+    public void orderWork(Subscriber<OrderOrCancelBean> subscriber, String work_id) {
+        apiService.orderWork(work_id)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

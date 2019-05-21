@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import com.example.a17494.yigong11.Adapter.MainContentPagerAdapter;
 import com.example.a17494.yigong11.Bean.LogInBean;
 import com.example.a17494.yigong11.Utils.Constants;
+import com.example.a17494.yigong11.Utils.SpUtils;
 import com.example.a17494.yigong11.cookie.RetrofitClient;
 
 import rx.Subscriber;
@@ -40,7 +41,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
             public void onNext(LogInBean logInBean) {
                 Log.d("CCC",logInBean.getMsg()+"  "+logInBean.getCode());
             }
-        }, "162210700000", "123456");
+        }, SpUtils.getString(getApplicationContext(),Constants.STU_ID), SpUtils.getString(getApplicationContext(),Constants.STU_PASS));
 
         initview();
         initListenter();
