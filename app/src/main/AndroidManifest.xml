@@ -21,6 +21,7 @@
         <activity android:name=".Activity.UserInfoActivity" android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity android:name=".Activity.MyActionsActivity" android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity android:name=".Activity.HourStatisticActivity" android:windowSoftInputMode="adjustPan|stateHidden"></activity>
+        <activity android:name=".Activity.RePassword" android:windowSoftInputMode="adjustPan|stateHidden"></activity>
 
     </application>
 

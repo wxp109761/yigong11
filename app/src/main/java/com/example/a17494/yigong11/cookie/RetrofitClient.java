@@ -9,7 +9,7 @@ import com.example.a17494.yigong11.Bean.AllWorkBean;
 import com.example.a17494.yigong11.Bean.HourBean;
 import com.example.a17494.yigong11.Bean.LogInBean;
 import com.example.a17494.yigong11.Bean.MyWorkBean;
-import com.example.a17494.yigong11.Bean.OrderOrCancelBean;
+import com.example.a17494.yigong11.Bean.ReturnResultBean;
 import com.example.a17494.yigong11.Bean.UserInfoBean;
 import com.example.a17494.yigong11.myServices.MyServices;
 import java.util.List;
@@ -35,7 +35,7 @@ public class RetrofitClient {
 
     private OkHttpClient okHttpClient;
 
-   public static final String  baseUrl="http://www.biggsai.com/volunteer/";
+   public static final String  baseUrl=" http://biggsai.com/volunteer/";
 
     private static Context mContext;
 
@@ -130,14 +130,14 @@ public class RetrofitClient {
     }
 
 
-    public void cancelSignUp(Subscriber<OrderOrCancelBean> subscriber,String work_no) {
+    public void cancelSignUp(Subscriber<ReturnResultBean> subscriber, String work_no) {
         apiService.cancelSignUp(work_no)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
     }
-    public void changeUserInfo(Subscriber<OrderOrCancelBean> subscriber,String phone,String major,String sex,String inYear) {
+    public void changeUserInfo(Subscriber<ReturnResultBean> subscriber, String phone, String major, String sex, String inYear) {
         apiService.changeUserInfo(phone,major,sex,inYear)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
@@ -158,7 +158,7 @@ public class RetrofitClient {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
     }
-    public void orderWork(Subscriber<OrderOrCancelBean> subscriber, String work_id) {
+    public void orderWork(Subscriber<ReturnResultBean> subscriber, String work_id) {
         apiService.orderWork(work_id)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
@@ -168,6 +168,22 @@ public class RetrofitClient {
     //获取所有义工工时
     public void getAllWorkHour(Subscriber<HourBean> subscriber,String student_id){
         apiService.getAllWorkHour(student_id)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+    }
+    //获取所有义工工时
+    public void getWorkHourThisTerm(Subscriber<HourBean> subscriber,String student_id){
+        apiService.getWorkHourofthisTerm(student_id)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+    }
+    //修改用户密码
+    public void rePassword(Subscriber<ReturnResultBean> subscriber, String student_id, String old_pass, String new_pass){
+        apiService.rePassword(student_id,old_pass,new_pass)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

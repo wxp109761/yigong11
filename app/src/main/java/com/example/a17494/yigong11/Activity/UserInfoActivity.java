@@ -3,14 +3,13 @@ package com.example.a17494.yigong11.Activity;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.a17494.yigong11.Bean.OrderOrCancelBean;
+import com.example.a17494.yigong11.Bean.ReturnResultBean;
 import com.example.a17494.yigong11.Bean.UserInfoBean;
 import com.example.a17494.yigong11.R;
 import com.example.a17494.yigong11.Utils.Constants;
@@ -82,7 +81,7 @@ public class UserInfoActivity extends Activity {
                 college.setText(entity.getCollege());
                 major.setText(entity.getMajor());
                 regDate.setText(entity.getDate());
-                inYear.setText(entity.getInYear()+"");
+                inYear.setText(SpUtils.getString(getApplicationContext(),Constants.STU_IN_YEAR));
                 tobarUtil.setOnSettingClickListenter(new TobarUtil.OnbtnSettingClickListenter() {
                     @Override
                     public void OnSettingClick() {
@@ -131,7 +130,7 @@ public class UserInfoActivity extends Activity {
                 String major=dialog.getMajor();
                 String college=dialog.getCollege();
                 String inYear=dialog.getInYear();
-                RetrofitClient.getInstance(UserInfoActivity.this).changeUserInfo(new Subscriber<OrderOrCancelBean>() {
+                RetrofitClient.getInstance(UserInfoActivity.this).changeUserInfo(new Subscriber<ReturnResultBean>() {
                     @Override
                     public void onCompleted() {
 
@@ -143,7 +142,7 @@ public class UserInfoActivity extends Activity {
                     }
 
                     @Override
-                    public void onNext(OrderOrCancelBean orderOrCancelBean) {
+                    public void onNext(ReturnResultBean returnResultBean) {
 
                     }
                 }, phone, major, college, inYear);
@@ -153,4 +152,9 @@ public class UserInfoActivity extends Activity {
             }
         });
     }
+
+
+
+
+
 }

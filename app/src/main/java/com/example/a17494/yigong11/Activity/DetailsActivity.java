@@ -16,14 +16,13 @@ import android.widget.Toast;
 
 import com.example.a17494.yigong11.Bean.AllSignupersBean;
 import com.example.a17494.yigong11.Bean.AllWorkBean;
-import com.example.a17494.yigong11.Bean.OrderOrCancelBean;
+import com.example.a17494.yigong11.Bean.ReturnResultBean;
 import com.example.a17494.yigong11.R;
 import com.example.a17494.yigong11.Utils.Constants;
 import com.example.a17494.yigong11.Utils.ProgressBar;
 import com.example.a17494.yigong11.Utils.SpUtils;
 import com.example.a17494.yigong11.Utils.TobarUtil;
 import com.example.a17494.yigong11.cookie.RetrofitClient;
-import com.example.a17494.yigong11.myServices.MyServices;
 
 
 import java.text.DateFormat;
@@ -37,8 +36,8 @@ import rx.Subscriber;
 
 public class DetailsActivity extends Activity {
 
-    private OrderOrCancelBean signedBean;
-    private OrderOrCancelBean cancelBean;
+    private ReturnResultBean signedBean;
+    private ReturnResultBean cancelBean;
     private Button signUp;
 
 
@@ -221,7 +220,7 @@ public class DetailsActivity extends Activity {
                Log.d("GGG",SpUtils.getString(getApplicationContext(),Constants.STU_ID));
 
 
-                RetrofitClient.getInstance(DetailsActivity.this).orderWork(new Subscriber<OrderOrCancelBean>() {
+                RetrofitClient.getInstance(DetailsActivity.this).orderWork(new Subscriber<ReturnResultBean>() {
                     @Override
                     public void onCompleted() {
 
@@ -233,9 +232,9 @@ public class DetailsActivity extends Activity {
                     }
 
                     @Override
-                    public void onNext(OrderOrCancelBean orderOrCancelBean) {
-                        Log.d("FFF",orderOrCancelBean.getMsg()+"  "+orderOrCancelBean.getData()+"  "+orderOrCancelBean.getCode());
-                        signedBean = orderOrCancelBean;
+                    public void onNext(ReturnResultBean returnResultBean) {
+                        Log.d("FFF", returnResultBean.getMsg()+"  "+ returnResultBean.getData()+"  "+ returnResultBean.getCode());
+                        signedBean = returnResultBean;
                         if (signedBean.getMsg().equals("成功")) {
                             addCancelBtn();
                             progressBar.signInEvent();
@@ -269,7 +268,7 @@ public class DetailsActivity extends Activity {
        cancelBtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               RetrofitClient.getInstance(DetailsActivity.this).cancelSignUp(new Subscriber<OrderOrCancelBean>() {
+               RetrofitClient.getInstance(DetailsActivity.this).cancelSignUp(new Subscriber<ReturnResultBean>() {
                    @Override
                    public void onCompleted() {
 
@@ -281,8 +280,8 @@ public class DetailsActivity extends Activity {
                    }
 
                    @Override
-                   public void onNext(OrderOrCancelBean orderOrCancelBean) {
-                       cancelBean = orderOrCancelBean;
+                   public void onNext(ReturnResultBean returnResultBean) {
+                       cancelBean = returnResultBean;
                        if (cancelBean.getMsg().equals("成功")) {
                            Toast.makeText(DetailsActivity.this, "取消成功", Toast.LENGTH_SHORT).show();
                            progressBar.resetSignView();

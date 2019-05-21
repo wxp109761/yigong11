@@ -87,6 +87,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 SpUtils.putString(getApplicationContext(), Constants.STU_PASS,  mLoginPass.getText().toString());
                                 SpUtils.putString(getApplicationContext(), Constants.STU_JSESSIONID,logInBean.getData().getJSESSIONID());
                                 SpUtils.putBoolean(getApplicationContext(),Constants.IS_LOGIN, true);
+                                SaveUserInfo();
                                 Intent intent=new Intent(context,MainActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -101,5 +102,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
 }
+    private void SaveUserInfo(){
+        RetrofitClient.getInstance(LoginActivity.this).getUserInfo(new Subscriber<UserInfoBean>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(UserInfoBean userInfoBean) {
+                SpUtils.putString(getApplicationContext(), Constants.STU_NAME,userInfoBean.getData().get(0).getName());
+                //SpUtils.putString(getApplicationContext(), Constants.STU_SEX,userInfoBean.getData().get(0).getSex());
+                SpUtils.putString(getApplicationContext(), Constants.STU_IN_YEAR,userInfoBean.getData().get(0).getInYear()+"");
+
+                //telPhone.setText(entity.getPhone()+"");
+               // college.setText(entity.getCollege());
+                //major.setText(entity.getMajor());
+               // regDate.setText(entity.getDate());
+                //inYear.setText(entity.getInYear()+"");
+            }
+        }, mLoginAccount.getText().toString());
+    }
+
 
 }

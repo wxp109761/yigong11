@@ -62,7 +62,7 @@ public class SettingActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.change_password :
-
+                rePassword();
                 break;
             case R.id.clear_cash :
 
@@ -93,4 +93,9 @@ public class SettingActivity extends Activity implements View.OnClickListener {
             startActivity(intent);
         }
     }
+    public void rePassword(){
+        Intent intent = new Intent(getApplicationContext(), RePassword.class);
+        startActivity(intent);
+    }
+
 }

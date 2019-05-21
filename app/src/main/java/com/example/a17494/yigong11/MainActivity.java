@@ -14,6 +14,7 @@ import android.widget.RadioGroup;
 
 
 import com.example.a17494.yigong11.Adapter.MainContentPagerAdapter;
+import com.example.a17494.yigong11.Bean.HourBean;
 import com.example.a17494.yigong11.Bean.LogInBean;
 import com.example.a17494.yigong11.Utils.Constants;
 import com.example.a17494.yigong11.Utils.SpUtils;
@@ -53,7 +54,6 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
             window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
-
     private void initListenter() {
         myViewPager.addOnPageChangeListener(this);
     }
