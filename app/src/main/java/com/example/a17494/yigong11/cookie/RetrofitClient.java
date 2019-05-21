@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.a17494.yigong11.Bean.AllSignupersBean;
 import com.example.a17494.yigong11.Bean.AllWorkBean;
+import com.example.a17494.yigong11.Bean.HourBean;
 import com.example.a17494.yigong11.Bean.LogInBean;
 import com.example.a17494.yigong11.Bean.MyWorkBean;
 import com.example.a17494.yigong11.Bean.OrderOrCancelBean;
@@ -136,8 +137,8 @@ public class RetrofitClient {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
     }
-    public void changeUserInfo(Subscriber<OrderOrCancelBean> subscriber, String student_id,String phone,String major,String sex,String inYear) {
-        apiService.changeUserInfo(student_id,phone,major,sex,inYear)
+    public void changeUserInfo(Subscriber<OrderOrCancelBean> subscriber,String phone,String major,String sex,String inYear) {
+        apiService.changeUserInfo(phone,major,sex,inYear)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -159,6 +160,14 @@ public class RetrofitClient {
     }
     public void orderWork(Subscriber<OrderOrCancelBean> subscriber, String work_id) {
         apiService.orderWork(work_id)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+    }
+    //获取所有义工工时
+    public void getAllWorkHour(Subscriber<HourBean> subscriber,String student_id){
+        apiService.getAllWorkHour(student_id)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

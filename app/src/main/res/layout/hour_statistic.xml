@@ -7,7 +7,7 @@
         android:id="@+id/curve_view"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        app:backgroundColor="#16b7df"
+        app:backgroundColor="@color/colorTheme"
         app:corner="1px"
         app:contentPaddingStart="40dp"
         app:contentPaddingEnd="40dp"

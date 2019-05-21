@@ -4,6 +4,7 @@ package com.example.a17494.yigong11.myServices;
 
 import com.example.a17494.yigong11.Bean.AllSignupersBean;
 import com.example.a17494.yigong11.Bean.AllWorkBean;
+import com.example.a17494.yigong11.Bean.HourBean;
 import com.example.a17494.yigong11.Bean.LogInBean;
 import com.example.a17494.yigong11.Bean.MyWorkBean;
 import com.example.a17494.yigong11.Bean.OrderOrCancelBean;
@@ -48,7 +49,7 @@ public interface MyServices {
 
     @FormUrlEncoded
     @POST("student/updatestudentinformation")
-    Observable<OrderOrCancelBean> changeUserInfo(@Field("studentid") String student_id, @Field("phone") String phone, @Field("major") String major, @Field("sex") String sex, @Field("inyear") String inYear);
+    Observable<OrderOrCancelBean> changeUserInfo(@Field("phone") String phone, @Field("major") String major, @Field("sex") String sex, @Field("inyear") String inYear);
 
 
     //用户登陆
@@ -62,4 +63,9 @@ public interface MyServices {
     @FormUrlEncoded
     @POST("student/orderwork")
     Observable<OrderOrCancelBean> orderWork(@Field("workid") String work_id);
+
+    //获取所有工时
+    @GET("student/getallworktime")
+    Observable<HourBean> getAllWorkHour(@Query("studentid") String student_id);
+
 }

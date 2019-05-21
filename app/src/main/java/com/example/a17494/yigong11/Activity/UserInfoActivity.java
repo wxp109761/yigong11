@@ -146,7 +146,7 @@ public class UserInfoActivity extends Activity {
                     public void onNext(OrderOrCancelBean orderOrCancelBean) {
 
                     }
-                }, studentId, phone, major, college, inYear);
+                }, phone, major, college, inYear);
 
                 dialog.dismiss();
                 getDataFormApi();
