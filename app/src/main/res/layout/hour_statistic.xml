@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.sctdroid.app.uikit.CurveView
+        android:id="@+id/curve_view"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:backgroundColor="#16b7df"
+        app:corner="1px"
+        app:contentPaddingStart="40dp"
+        app:contentPaddingEnd="40dp"
+        app:contentPaddingBottom="20dp"
+        app:contentPaddingTop="20dp"
+        app:strokeWidth="1px"
+        app:showXLine="false"
+        app:showXText="true"
+        app:contentColor="@android:color/white"
+        app:dotTextColor="@android:color/white"
+        app:dotTextSize="10sp"
+        app:axisTextSize="11sp"
+        app:axisTextColor="@android:color/white"
+        app:dotTextGravity="center_horizontal|bottom"
+        app:showAll="true"
+        app:unitWidth="100dp"/>
+
+</LinearLayout>

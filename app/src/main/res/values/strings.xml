@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">yigong1.1</string>
+    <string-array name="department">
+        <item>不限</item>
+        <item>图书馆</item>
+        <item>食堂</item>
+        <item>宿舍</item>
+        <item>实验室</item>
+        <item>教学楼</item>
+        <item>学生处</item>
+        <item>义工站</item>
+        <item>青协</item>
+        <item>其他</item>
+    </string-array>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.example.a17494.yigong11.View.NoScrollViewPager
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.example.a17494.yigong11.View.NoScrollViewPager>
+
+    <RadioGroup
+        android:id="@+id/tabs_group"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background= "#dcdcdc"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <RadioButton
+            android:id="@+id/today_tab"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/select_main_view_tab_home_page"
+            android:text="首页" />
+        <RadioButton
+            android:id="@+id/mess_tab"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/select_main_view_tab_action"
+            android:text="活动" />
+
+        <RadioButton
+            android:id="@+id/mine_tab"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/select_main_view_tab_mine"
+            android:text="我的" />
+    </RadioGroup>
+
+</RelativeLayout>

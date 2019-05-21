@@ -1,0 +1,86 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <style name="Custom"/>
+    //导航栏样式
+    <style name="Custom.TabRadioButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/tab_text_color_selector</item>
+    </style>
+    //线的样式
+    <style name="Custom.lineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@color/colorTheme</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+    <style name="Custom.mineFunctionLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="Custom.mineFunction">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:drawableRight">@drawable/ic_arrow_right</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+    //signedView
+    <style name="def_sign_in_style">
+        <item name="sign_in_bg_clor">@android:color/white</item>
+        <item name="sign_in_pb_clor">@color/colorTheme</item>
+        <item name="sign_in_check_clor">@android:color/white</item>
+        <item name="sign_in_text_clor">@color/colorBlack</item>
+        <item name="sign_in_text_size">14sp</item>
+    </style>
+    <style name="Custom.user_info">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+    <style name="Custom.works_info">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+    <!--自定义dialog背景全透明无边框theme -->
+    <style name="MyDialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="Custom.user_info_change">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+</resources>

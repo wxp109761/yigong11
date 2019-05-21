@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.a17494.yigong11.Utils.TobarUtil
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@android:color/white"
+        app:leftBackground="@android:color/white"
+        app:titleText="活动详情"
+        app:titleTextSize="8sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/detail_bg"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/detail_bg"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/action_img"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/detail_bg"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-60dp"
+                android:background="@drawable/touxiang_1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detail_bg"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-30dp"
+                android:layout_toRightOf="@+id/action_img"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/work_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2工时"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="XXX"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detail_bg"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="-50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="距离活动开始"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/time_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2天8时12分"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/action_title_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/action_img"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/work_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="整理图书馆"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/require_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="需要人数:4人"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/sign_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="已报名:2人"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="10dp"
+                    android:background="#cdcccc" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/action_process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/action_title_container"
+                android:layout_marginTop="10dp"
+                android:background="#f5efef">
+            <LinearLayout
+                android:id="@+id/titleContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="center"
+                    android:text="———    活动流程    ———"
+                    android:textSize="16sp"
+                    android:textStyle="bold">
+                </TextView>
+            </LinearLayout>
+            <com.example.a17494.yigong11.Utils.ProgressBar
+                android:id="@+id/sign_in_view"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleContent"
+                android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/action_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/action_process"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="详情"
+                    android:textColor="#38ADFF"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/work_no"
+                    style="@style/Custom.works_info"
+                    android:text="活动编号" />
+                <TextView
+                    android:id="@+id/publisher_id"
+                    style="@style/Custom.works_info"
+                    android:text="发布者ID" />
+                <TextView
+                    android:id="@+id/publish_time"
+                    style="@style/Custom.works_info"
+                    android:text="发布时间" />
+                <TextView
+                    android:id="@+id/work_addr"
+                    style="@style/Custom.works_info"
+                    android:text="活动地点" />
+                <TextView
+                    android:id="@+id/work_date"
+                    style="@style/Custom.works_info"
+                    android:text="活动时间：" />
+
+                <TextView
+                    android:id="@+id/work_dept"
+                    style="@style/Custom.works_info"
+                    android:text="活动部门：" />
+                <TextView
+                    android:id="@+id/work_campus"
+                    style="@style/Custom.works_info"
+                    android:text="活动校区：" />
+                <TextView
+                    android:id="@+id/work_tips"
+                    style="@style/Custom.works_info"
+                    android:text="活动标签：" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorTheme">
+        <Button
+            android:id="@+id/my_collect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:singleLine="true"
+            android:drawableTop="@drawable/ic_collect"
+            android:text="收藏"
+            android:textColor="@color/colorBlack"
+            android:textSize="11sp"
+            />
+        <Button
+            android:id="@+id/sign_up_action"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="4"
+            android:background="@null"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="报名"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

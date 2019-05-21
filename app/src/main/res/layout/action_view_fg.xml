@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.qlh.dropdownmenu.DropDownMenu
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:id="@+id/DropMenu"
+        app:dddividerColor="@color/colorTheme"
+        app:ddmaskColor="@color/mask_color"
+        app:ddmenuBackgroundColor="@color/white"
+        app:ddmenuSelectedIcon="@drawable/ic_arrow_down"
+        app:ddmenuTextSize="@dimen/x40"
+        app:ddtextSelectedColor="@color/blue_light"
+        app:ddtextUnselectedColor="@color/drop_down_unselected"
+        app:ddunderlineColor="@color/colorTheme"
+      >
+    </com.qlh.dropdownmenu.DropDownMenu>
+
+
+
+</LinearLayout>

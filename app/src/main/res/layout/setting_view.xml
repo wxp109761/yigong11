@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f5efef">
+    <com.example.a17494.yigong11.Utils.TobarUtil
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@android:color/white"
+        app:leftBackground="@android:color/white"
+        app:titleText="设置     "
+        app:titleTextSize="8sp" />
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/change_password"
+            android:text="密码修改"
+            style="@style/Custom.mineFunction" />
+        <View
+            style="@style/Custom.lineStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="110dp"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/clear_cash"
+            android:text="清楚缓存"
+            style="@style/Custom.mineFunction" />
+        <View
+            style="@style/Custom.lineStyle" />
+        <TextView
+            android:id="@+id/detection_update"
+            android:text="检测更新"
+            style="@style/Custom.mineFunction" />
+        <View
+            style="@style/Custom.lineStyle" />
+        <TextView
+
+            android:id="@+id/about"
+            android:text="关于"
+            style="@style/Custom.mineFunction" />
+        <View
+            style="@style/Custom.lineStyle" />
+        <TextView
+            android:id="@+id/my_collect"
+            android:text="更新说明"
+            style="@style/Custom.mineFunction" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorTheme"
+        android:text="退出当前账号"/>
+</RelativeLayout>

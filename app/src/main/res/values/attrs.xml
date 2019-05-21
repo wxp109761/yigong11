@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopBar">
+        <attr name="leftBackground" format="reference" />
+        <attr name="rightBackground" format="reference" />
+        <attr name="titleText" format="string" />
+        <attr name="settingText" format="string" />
+        <attr name="titleTextSize" format="dimension" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="deptIcon" format="reference"/>
+        <attr name="dateIcon" format="reference"/>
+    </declare-styleable>
+
+//活动进度
+    <declare-styleable name="progressBar">
+        <attr name="sign_in_bg_clor" format="color" />
+        <attr name="sign_in_pb_clor" format="color" />
+        <attr name="sign_in_check_clor" format="color" />
+        <attr name="sign_in_text_clor" format="color" />
+        <attr name="sign_in_text_size" format="dimension" />
+    </declare-styleable>
+
+
+</resources>
