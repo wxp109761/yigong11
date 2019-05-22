@@ -82,5 +82,10 @@
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:maxLines">1</item>
     </style>
+    //输入框下滑线
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorBg</item>
+        <item name="colorControlActivated">@color/colorTheme</item>
+    </style>
 
 </resources>
