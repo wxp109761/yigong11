@@ -144,7 +144,7 @@ public class DetailsActivity extends Activity {
                 workDate.setText("活动时间："+entity.getStartTime());
                 workTips.setText("活动标签："+entity.getWorkTip());
                 workDept.setText("活动部门："+entity.getWorkDepartment());
-                workCampus.setText("活动部门："+entity.getWorkCampus());
+                workCampus.setText("活动校区："+entity.getWorkCampus());
                 new TimeThread().start();
                 isSignedWorks(entity.getId()+"");
             }

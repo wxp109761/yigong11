@@ -99,7 +99,7 @@ public class AllWorkListAdapter extends BaseAdapter implements Filterable {
                 //否则把符合条件的数据对象添加到集合中
                     list = new ArrayList<>();
                     for (AllWorkBean.DataBean.IsonBean entity:backList){
-                        if ((entity.getWorkDepartment()+entity.getWorkCampus()).contains(charSequence)){
+                        if ((entity.getWorkDepartment()+entity.getWorkCampus()+entity.getStartTime()).contains(charSequence)){
                             Log.d("Filter-->","performFiltering:"+entity.toString());
                             list.add(entity);
                         }

@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a17494.yigong11.Calender.adapter.DateMonthAdapter;
 import com.example.a17494.yigong11.Calender.utils.DataUtils;
@@ -28,6 +29,7 @@ import com.qlh.dropdownmenu.view.ViewBaseAction;
 public class DatePopupWindow extends PopupWindow implements View.OnClickListener,ViewBaseAction {
     private View conentView;
     private GridView gridView ;
+    private TextView noFilter ;
     private TextView frontMonthTv ;
     private TextView nextMonthTv ;
     private TextView currentDateTv ;
@@ -38,7 +40,7 @@ public class DatePopupWindow extends PopupWindow implements View.OnClickListener
     final int RIGHT = 0;
     final int LEFT = 1;
     private GestureDetector gestureDetector;
-    public DatePopupWindow(final Context context, String dateString) {
+    public View DatePopupView(final Context context, String dateString) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         conentView = inflater.inflate(R.layout.view_poup, null);
         int h = context.getResources().getDisplayMetrics().heightPixels;
@@ -62,6 +64,8 @@ public class DatePopupWindow extends PopupWindow implements View.OnClickListener
         // 设置SelectPicPopupWindow弹出窗体动画效果
 //        this.setAnimationStyle(R.style.Animation_Pop_style);
         gridView = (GridView) conentView.findViewById(R.id.list);
+        noFilter = (TextView)conentView.findViewById(R.id.no_filter);
+        noFilter.setOnClickListener(this);
         frontMonthTv = (TextView)conentView.findViewById(R.id.front_month);
         frontMonthTv.setOnClickListener(this);
         nextMonthTv = (TextView)conentView.findViewById(R.id.next_month);
@@ -96,6 +100,7 @@ public class DatePopupWindow extends PopupWindow implements View.OnClickListener
                 return gestureDetector.onTouchEvent(event);
             }
         });
+        return conentView;
 
     }
 
@@ -119,7 +124,6 @@ public class DatePopupWindow extends PopupWindow implements View.OnClickListener
                 }
             };
     public void doResult(int action) {
-
         switch (action) {
             case RIGHT:
                 date = DataUtils.getSomeMonthDay(date,-1);
@@ -141,11 +145,13 @@ public class DatePopupWindow extends PopupWindow implements View.OnClickListener
         }
     }
     public OnItemClick onItemClick ;
-
+    public noFilterClick noFilterClick ;
     public void setOnItemClick(OnItemClick onItemClick) {
         this.onItemClick = onItemClick;
     }
-
+    public void setOnNoFilterClick(noFilterClick noFilterClick) {
+        this.noFilterClick= noFilterClick;
+    }
     @Override
     public void onClick(View view) {
         int id = view.getId();
@@ -166,25 +172,32 @@ public class DatePopupWindow extends PopupWindow implements View.OnClickListener
                 onItemClick.onItemClick(date);
             }
             dismiss();
+        } else if (id==noFilter.getId()){
+            if (noFilterClick!=null){
+                noFilterClick.noFilterClick();
+            }
+           Log.d("WWW","YYY");
+            dismiss();
         }
     }
-
     @Override
     public void hide() {
 
     }
-
     @Override
     public void show() {
 
     }
-
     /**
      * 点击回调接口
      */
     public interface OnItemClick{
         void onItemClick(String date);
     }
+    public interface noFilterClick{
+        void  noFilterClick();
+    }
+
 
     @Override
     public void dismiss() {
