@@ -98,15 +98,15 @@ public class ActionFragment extends BaseFragment implements AdapterView.OnItemCl
             listView.setFilterText(dateSelected);
             //去除黑框
             contentView.dispatchDisplayHint(View.INVISIBLE);
-        } if(!departSelected.equals("不限")&&!campusSelected.equals("不限")&&dateSelected.equals("不限")){
+        }else if(!departSelected.equals("不限")&&!campusSelected.equals("不限")&&dateSelected.equals("不限")){
             listView.setFilterText(departSelected+campusSelected);
             //去除黑框
             contentView.dispatchDisplayHint(View.INVISIBLE);
-        }if(departSelected.equals("不限")&&!campusSelected.equals("不限")&&!dateSelected.equals("不限")){
+        }else if(departSelected.equals("不限")&&!campusSelected.equals("不限")&&!dateSelected.equals("不限")){
             listView.setFilterText(campusSelected+dateSelected);
             //去除黑框
             contentView.dispatchDisplayHint(View.INVISIBLE);
-        }if(!departSelected.equals("不限")&&campusSelected.equals("不限")&&!dateSelected.equals("不限")){
+        }else if(!departSelected.equals("不限")&&campusSelected.equals("不限")&&!dateSelected.equals("不限")){
             listView.setFilterText(departSelected+dateSelected);
             //去除黑框
             contentView.dispatchDisplayHint(View.INVISIBLE);

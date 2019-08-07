@@ -4,10 +4,11 @@ import java.util.List;
 
 public class UserInfoBean {
 
+
     /**
      * code : 200
      * msg : 成功
-     * data : [{"id":1,"studentId":162210702234,"name":"张赛","sex":"男","phone":15757575757,"college":"计算机学院","major":"计算机科学与技术","date":"2019-03-30","inYear":2016},{"id":2,"studentId":162210702235,"name":"bigsai","sex":"女","phone":15757575757,"college":"计算机学院","major":"软件工程","date":"2019-03-30","inYear":2016},{"id":3,"studentId":162210702236,"name":"杨晟","sex":"男","phone":15757575757,"college":"计算机学院","major":"计算机科学与技术","date":"2019-04-15","inYear":2017},{"id":6,"studentId":162210700000,"name":"bigsai2","sex":"男","phone":15751512222,"college":"计算机学院","major":"软件工程","date":"2019-04-11","inYear":2016},{"id":10,"studentId":162210700002,"name":"bigsai2","sex":"男","phone":15751512222,"college":"外国语学院","major":"外语专业","date":"2019-04-11","inYear":2016}]
+     * data : [{"college":"计算机学院","date":"2016.09","in_year":2016,"major":"计算机科学与技术","phone":15262910090,"sex":"男","name":"位展朋","student_id":162210700000,"id":1,"worktime":0}]
      */
 
     private String code;
@@ -40,66 +41,28 @@ public class UserInfoBean {
 
     public static class DataBean {
         /**
-         * id : 1
-         * studentId : 162210702234
-         * name : 张赛
-         * sex : 男
-         * phone : 15757575757
          * college : 计算机学院
+         * date : 2016.09
+         * in_year : 2016
          * major : 计算机科学与技术
-         * date : 2019-03-30
-         * inYear : 2016
+         * phone : 15262910090
+         * sex : 男
+         * name : 位展朋
+         * student_id : 162210700000
+         * id : 1
+         * worktime : 0
          */
 
-        private int id;
-        private long studentId;
-        private String name;
-        private String sex;
-        private long phone;
         private String college;
-        private String major;
         private String date;
-        private int inYear;
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public long getStudentId() {
-            return studentId;
-        }
-
-        public void setStudentId(long studentId) {
-            this.studentId = studentId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getSex() {
-            return sex;
-        }
-
-        public void setSex(String sex) {
-            this.sex = sex;
-        }
-
-        public long getPhone() {
-            return phone;
-        }
-
-        public void setPhone(long phone) {
-            this.phone = phone;
-        }
+        private int in_year;
+        private String major;
+        private long phone;
+        private String sex;
+        private String name;
+        private long student_id;
+        private int id;
+        private int worktime;
 
         public String getCollege() {
             return college;
@@ -107,14 +70,6 @@ public class UserInfoBean {
 
         public void setCollege(String college) {
             this.college = college;
-        }
-
-        public String getMajor() {
-            return major;
-        }
-
-        public void setMajor(String major) {
-            this.major = major;
         }
 
         public String getDate() {
@@ -125,12 +80,68 @@ public class UserInfoBean {
             this.date = date;
         }
 
-        public int getInYear() {
-            return inYear;
+        public int getIn_year() {
+            return in_year;
         }
 
-        public void setInYear(int inYear) {
-            this.inYear = inYear;
+        public void setIn_year(int in_year) {
+            this.in_year = in_year;
+        }
+
+        public String getMajor() {
+            return major;
+        }
+
+        public void setMajor(String major) {
+            this.major = major;
+        }
+
+        public long getPhone() {
+            return phone;
+        }
+
+        public void setPhone(long phone) {
+            this.phone = phone;
+        }
+
+        public String getSex() {
+            return sex;
+        }
+
+        public void setSex(String sex) {
+            this.sex = sex;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public long getStudent_id() {
+            return student_id;
+        }
+
+        public void setStudent_id(long student_id) {
+            this.student_id = student_id;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public int getWorktime() {
+            return worktime;
+        }
+
+        public void setWorktime(int worktime) {
+            this.worktime = worktime;
         }
     }
 }

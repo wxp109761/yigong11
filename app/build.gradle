@@ -38,4 +38,17 @@ dependencies {
     implementation project(':dropdownmenu')
     implementation 'com.github.auv1107:CurveView:a0e576c041'
     implementation 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
+    implementation 'com.github.huangyanbin:SmartTable:2.2.0'
+    //刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-32'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-32'//没有使用特殊Header，可以不加这行
+
+
+//1.1.0 androidx 版本
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-15'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-15'
+
+
+
+
 }

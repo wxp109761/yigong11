@@ -33,7 +33,7 @@
         android:orientation="vertical">
         <TextView
             android:id="@+id/clear_cash"
-            android:text="清楚缓存"
+            android:text="清除缓存"
             style="@style/Custom.mineFunction" />
         <View
             style="@style/Custom.lineStyle" />

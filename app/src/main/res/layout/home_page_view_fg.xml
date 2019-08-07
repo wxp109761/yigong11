@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
             <TextView
-                android:id="@+id/my_action"
+                android:id="@+id/hour_check"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -53,7 +53,7 @@
                 android:text="工时查看"
                 android:textAlignment="center"/>
             <TextView
-                android:id="@+id/my_mess"
+                android:id="@+id/psy_consult"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -62,7 +62,7 @@
                 android:textAlignment="center"
                 android:text="心理咨询"/>
             <TextView
-                android:id="@+id/free_tome"
+                android:id="@+id/academic_guide"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -71,7 +71,7 @@
                 android:padding="10dp"
                 android:textAlignment="center"/>
             <TextView
-                android:id="@+id/use_info"
+                android:id="@+id/web_page_guide"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -85,6 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
             <TextView
+                android:id="@+id/more"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -106,6 +107,7 @@
                 android:text="活动提醒"
                 android:drawableLeft="@drawable/ic_remind"/>
             <TextView
+                android:id="@+id/action_remind"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="6"

@@ -46,19 +46,20 @@
                 android:layout_toRightOf="@+id/action_img"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/work_hour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2工时"
-                    android:textSize="16sp" />
+
 
                 <TextView
                     android:id="@+id/tips"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="XXX"
+                    android:text="活动工时"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/work_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2工时"
                     android:textSize="16sp" />
             </LinearLayout>
 

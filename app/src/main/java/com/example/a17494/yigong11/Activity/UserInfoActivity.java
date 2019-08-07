@@ -81,15 +81,15 @@ public class UserInfoActivity extends Activity {
                 college.setText(entity.getCollege());
                 major.setText(entity.getMajor());
                 regDate.setText(entity.getDate());
-                inYear.setText(SpUtils.getString(getApplicationContext(),Constants.STU_IN_YEAR));
+                inYear.setText(entity.getIn_year()+"");
                 tobarUtil.setOnSettingClickListenter(new TobarUtil.OnbtnSettingClickListenter() {
                     @Override
                     public void OnSettingClick() {
-                        changeInfo(SpUtils.getString(getApplicationContext(),Constants.STU_ID),entity.getPhone()+"",entity.getMajor(),entity.getSex(),entity.getInYear()+"");
+                        changeInfo(SpUtils.getString(getApplicationContext(),Constants.STU_ID),entity.getPhone()+"",entity.getMajor(),entity.getSex(),entity.getIn_year());
                     }
                 });
             }
-        }, SpUtils.getString(getApplicationContext(),Constants.STU_ID));
+        },Long.parseLong(SpUtils.getString(getApplicationContext(),Constants.STU_ID)));
     }
 
     private void initView(){
@@ -112,7 +112,7 @@ public class UserInfoActivity extends Activity {
 
         }
     }
-    private void changeInfo(final String studentId, String phone, String major, String college, String inYear){
+    private void changeInfo(final String studentId, String phone, String major, String college, int inYear){
         dialog.show();
         dialog.setUserInfo(phone,major,college,inYear);
         dialog.setCanelBtnt(new View.OnClickListener() {
@@ -129,7 +129,7 @@ public class UserInfoActivity extends Activity {
                 String phone=dialog.getPhone();
                 String major=dialog.getMajor();
                 String college=dialog.getCollege();
-                String inYear=dialog.getInYear();
+                int inYear=dialog.getInYear();
                 RetrofitClient.getInstance(UserInfoActivity.this).changeUserInfo(new Subscriber<ReturnResultBean>() {
                     @Override
                     public void onCompleted() {

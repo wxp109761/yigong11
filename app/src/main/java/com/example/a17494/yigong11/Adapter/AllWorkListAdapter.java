@@ -30,9 +30,7 @@ public class AllWorkListAdapter extends BaseAdapter implements Filterable {
         this.inflater = LayoutInflater.from(context);
         this.mList=mList;
         backList=mList;
-
     }
-
     @Override
     public int getCount() {
         return mList.size();
@@ -56,10 +54,8 @@ public class AllWorkListAdapter extends BaseAdapter implements Filterable {
             holder=new ViewHolder();
             holder.worksImg=(ImageView)convertView.findViewById(R.id.works_icon);
             holder.addrName=(TextView)convertView.findViewById(R.id.works_name);
-
             holder.worksTime=(TextView)convertView.findViewById(R.id.works_info);
             convertView.setTag(holder);
-
         }else {
             holder=(ViewHolder) convertView.getTag();
         }
@@ -68,9 +64,7 @@ public class AllWorkListAdapter extends BaseAdapter implements Filterable {
         holder.addrName.setText(entiey.getWorkAddr());
         holder.worksImg.setBackgroundResource(R.drawable.ic_logo);
         return convertView;
-
     }
-
     @Override
     public Filter getFilter() {
         if (mFilter ==null){
@@ -86,14 +80,13 @@ public class AllWorkListAdapter extends BaseAdapter implements Filterable {
     }
 
     private class MyFilter extends Filter {
-
         //定义过滤规则
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             FilterResults result = new FilterResults();
             List<AllWorkBean.DataBean.IsonBean> list ;
             if (TextUtils.isEmpty(charSequence)){
-                //当过滤的关键字为空的时候，我们则显示所有的数据
+                //当过滤的关键字为空的时候，则显示所有的数据
                 list = backList;
                 }else{
                 //否则把符合条件的数据对象添加到集合中

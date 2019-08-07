@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.a17494.yigong11.Bean.AllSignupersBean;
 import com.example.a17494.yigong11.Bean.AllWorkBean;
 import com.example.a17494.yigong11.Bean.ReturnResultBean;
+import com.example.a17494.yigong11.Bean.WorkBean;
 import com.example.a17494.yigong11.R;
 import com.example.a17494.yigong11.Utils.Constants;
 import com.example.a17494.yigong11.Utils.ProgressBar;
@@ -42,7 +43,7 @@ public class DetailsActivity extends Activity {
 
 
     private RelativeLayout relativeLayout;
-    private AllWorkBean.DataBean.IsonBean entity;
+    private WorkBean entity;
 
     boolean isUser_idSignedWork_noFlag=false;
     boolean isUser_idCompleteWork_noFlag=false;
@@ -79,7 +80,7 @@ public class DetailsActivity extends Activity {
         String work_id= getIntent().getStringExtra("data");
         Log.d("CCC",work_id+"CC");
         initView();
-        getDataFromService(work_id+"");
+        getDataFromService(work_id);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(0xffffff);
         }
@@ -123,16 +124,22 @@ public class DetailsActivity extends Activity {
 
     }
     private void getDataFromService(String workId){
-        RetrofitClient.getInstance(DetailsActivity.this).getAllWorksById(new Subscriber<AllWorkBean>() {
+        RetrofitClient.getInstance(DetailsActivity.this).getAllWorkNoDiff(new Subscriber<List<WorkBean>>() {
             @Override
             public void onCompleted() {
+
             }
+
             @Override
             public void onError(Throwable e) {
+
             }
+
             @Override
-            public void onNext(AllWorkBean allWorkBean) {
-                entity=allWorkBean.getData().getIson().get(0);
+            public void onNext(List<WorkBean> workBeans) {
+                Log.d("CCC", workBeans.get(0).getAttendNum()+"CC");
+                entity= workBeans.get(0);
+
                 workHour.setText(entity.getWorkHour()+"");
                 workName.setText(entity.getName());
                 requireNum.setText("需要人数："+entity.getNeedNum());
@@ -148,8 +155,7 @@ public class DetailsActivity extends Activity {
                 new TimeThread().start();
                 isSignedWorks(entity.getId()+"");
             }
-        },workId);
-
+        },Integer.parseInt(workId));
 
     }
     private void isSignedWorks(String work_id){

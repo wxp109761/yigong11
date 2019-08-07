@@ -55,6 +55,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
     private TextView settings;
     private TextView user_info;
     private TextView mCollect;
+    private TextView userTips;
     private TextView mAllHour;
 
 
@@ -90,8 +91,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
         user_info=rootView.findViewById(R.id.use_info);
         mCollect = rootView.findViewById(R.id.my_collect);
         settings = rootView.findViewById(R.id.settings);
+        userTips=rootView.findViewById(R.id.user_tips);
         headerImg.setOnClickListener(this);
-        mAllHour.setOnClickListener(this);
         mActions.setOnClickListener(this);
         mMess.setOnClickListener(this);
         hourStatistic.setOnClickListener(this);
@@ -100,6 +101,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
         settings.setOnClickListener(this);
         Log.d("GGG",SpUtils.getString(getContext(),Constants.STU_NAME)+"");
         userName.setText(SpUtils.getString(getContext(),Constants.STU_NAME));
+        userTips.setText(SpUtils.getString(getContext(),Constants.STU_ID));
+        getAllHour();
 
         Bitmap bt = BitmapFactory.decodeFile(path + "head.jpg");// 从SD卡中找头像，转换成Bitmap
         if (bt != null) {
@@ -118,10 +121,6 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
         switch (v.getId()){
             case R.id.header_img:
                 changeHeaderImg();
-                break;
-            case R.id.all_hour:
-                Toast.makeText(rootView.getContext(),"gongshi",Toast.LENGTH_SHORT).show();
-               getAllHour();
                 break;
             case R.id.my_action:
                 Toast.makeText(rootView.getContext(),"我的活动",Toast.LENGTH_SHORT).show();
@@ -217,9 +216,11 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
 
             @Override
             public void onNext(HourBean hourBean) {
-
+                mAllHour.setText(hourBean.getData().getSum1()+"");
+                //mAllHour.setText("96");
+               // Log.d("FFF",);
             }
-        },SpUtils.getString(getContext(),Constants.STU_ID));
+        },Long.parseLong(SpUtils.getString(getContext(),Constants.STU_ID)));
     }
 
 

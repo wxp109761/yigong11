@@ -2,10 +2,11 @@ package com.example.a17494.yigong11.Bean;
 
 public class HourBean {
 
+
     /**
      * code : 200
      * msg : 成功
-     * data : {"sum1":4,"student_id":162210700000,"isfinished":1}
+     * data : {"sum1":2,"student_id":162210700000,"isfinished":1}
      */
 
     private String code;
@@ -38,7 +39,7 @@ public class HourBean {
 
     public static class DataBean {
         /**
-         * sum1 : 4
+         * sum1 : 2
          * student_id : 162210700000
          * isfinished : 1
          */

@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onNext(UserInfoBean userInfoBean) {
                 SpUtils.putString(getApplicationContext(), Constants.STU_NAME,userInfoBean.getData().get(0).getName());
                 //SpUtils.putString(getApplicationContext(), Constants.STU_SEX,userInfoBean.getData().get(0).getSex());
-                SpUtils.putString(getApplicationContext(), Constants.STU_IN_YEAR,userInfoBean.getData().get(0).getInYear()+"");
+               // SpUtils.putString(getApplicationContext(), Constants.STU_IN_YEAR,userInfoBean.getData().get(0).getInYear()+"");
 
                 //telPhone.setText(entity.getPhone()+"");
                // college.setText(entity.getCollege());
@@ -126,7 +126,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                // regDate.setText(entity.getDate());
                 //inYear.setText(entity.getInYear()+"");
             }
-        }, mLoginAccount.getText().toString());
+        }, Long.parseLong(mLoginAccount.getText().toString()));
     }
 
 

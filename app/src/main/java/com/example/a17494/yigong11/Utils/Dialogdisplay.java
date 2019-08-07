@@ -59,11 +59,11 @@ public class Dialogdisplay extends Dialog {
     /**
      * 设置提示内容     *     * @param str 内容
      */
-    public void setUserInfo(String u_phone,String u_major,String u_college,String u_inYear) {
+    public void setUserInfo(String u_phone,String u_major,String u_college,int u_inYear) {
         phone.setText(u_phone);
         major.setText(u_major);
         college.setText(u_college);
-        inYear.setText(u_inYear);
+        inYear.setText(u_inYear+"");
     }
     public String getPhone() {
        return phone.getText()+"";
@@ -74,8 +74,8 @@ public class Dialogdisplay extends Dialog {
     public String getCollege() {
         return college.getText()+"";
     }
-    public String getInYear() {
-        return inYear.getText()+"";
+    public int getInYear() {
+        return Integer.parseInt(inYear.getText().toString());
     }
 
 

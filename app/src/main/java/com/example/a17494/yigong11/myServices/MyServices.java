@@ -9,6 +9,7 @@ import com.example.a17494.yigong11.Bean.LogInBean;
 import com.example.a17494.yigong11.Bean.MyWorkBean;
 import com.example.a17494.yigong11.Bean.ReturnResultBean;
 import com.example.a17494.yigong11.Bean.UserInfoBean;
+import com.example.a17494.yigong11.Bean.WorkBean;
 
 import java.util.List;
 
@@ -21,12 +22,17 @@ import rx.Observable;
 
 
 public interface MyServices {
+
     //获取所有有效的活动信息
     @GET("public/getworkinformation")
     Observable<AllWorkBean>getAllWorks();
     //根据活动ID获得活动信息
     @GET("public/getworkinformation")
-    Observable<AllWorkBean>getAllWorkById(@Query("id") String work_no);
+    Observable<AllWorkBean>getAllWorkById(@Query("id") String work_id);
+
+    //根据活动ID获取活动（不分类）
+    @GET("public/getallwork")
+    Observable<List<WorkBean>> getAllWorkNoDiff(@Query("workid") int work_id);
 
     //?workid=1
     //返回所有已经预约该活动的所有义工人员信息
@@ -49,7 +55,7 @@ public interface MyServices {
 
     @FormUrlEncoded
     @POST("student/updatestudentinformation")
-    Observable<ReturnResultBean> changeUserInfo(@Field("phone") String phone, @Field("major") String major, @Field("sex") String sex, @Field("inyear") String inYear);
+    Observable<ReturnResultBean> changeUserInfo(@Field("phone") String phone, @Field("major") String major, @Field("sex") String sex, @Field("inyear") int inYear);
 
 
     //用户登陆
@@ -58,7 +64,7 @@ public interface MyServices {
     Observable<LogInBean> logoIn(@Field("username") String user_id, @Field("password") String password);
     //获取学生用户信息
     @GET("public/getstudentinformation")
-    Observable<UserInfoBean> getUserInfo(@Query("studentid") String user_id);
+    Observable<UserInfoBean> getUserInfo(@Query("studentid") long user_id);
     //预约义工活动
     @FormUrlEncoded
     @POST("student/orderwork")
@@ -66,7 +72,7 @@ public interface MyServices {
 
     //获取所有工时
     @GET("student/getallworktime")
-    Observable<HourBean> getAllWorkHour(@Query("studentid") String student_id);
+    Observable<HourBean> getAllWorkHour(@Query("studentid") long student_id);
 
     //获取本学期工时
     @GET("student/getworktimethisterm")
@@ -76,4 +82,6 @@ public interface MyServices {
     @FormUrlEncoded
     @POST("student/updatestudentpassword")
     Observable<ReturnResultBean> rePassword(@Field("studentid") String student_id, @Field("oldpassword") String old_password, @Field("newpassword") String password);
+
+
 }

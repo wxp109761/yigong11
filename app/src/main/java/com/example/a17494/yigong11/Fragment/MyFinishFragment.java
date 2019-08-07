@@ -41,12 +41,7 @@ public class MyFinishFragment extends Fragment implements AdapterView.OnItemClic
         lists=view.findViewById(R.id.mlists);
         lists.setTextFilterEnabled(true);
         getDataFromService();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                filterView();
-            }
-            },0);
+
         lists.dispatchDisplayHint(View.INVISIBLE);
         return view;
     }
@@ -103,4 +98,5 @@ public class MyFinishFragment extends Fragment implements AdapterView.OnItemClic
         super.onResume();
         getDataFromService();
     }
+
 }

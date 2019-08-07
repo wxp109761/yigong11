@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">yigong1.1</string>
     <string-array name="department">
         <item>不限</item>
@@ -12,4 +12,10 @@
         <item>青协</item>
         <item>其他</item>
     </string-array>
+    <string name="text_back" tools:ignore="MissingTranslation">返回</string>
+    <string name="text_forward" tools:ignore="MissingTranslation">提交</string>
+    <string name="time_picker_year" tools:ignore="MissingTranslation">年</string>
+    <string name="time_picker_month" tools:ignore="MissingTranslation">月</string>
+    <string name="time_picker_day" tools:ignore="MissingTranslation">日</string>
+    <string name="time_picker_finish" tools:ignore="MissingTranslation">确认</string>
 </resources>
